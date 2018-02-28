@@ -1,0 +1,30 @@
+{
+  "name": "appjs",
+  "version": "1.0.0",
+  "description": "appnodejs ",
+  "main": "app.js",
+  "dependencies": {
+    "promise": "^8.0.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "create_file" : "touch log.txt",
+    "ping_log": "ping www.google.com.br > log.txt" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbsan/app-nodejs.git"
+  },
+  "keywords": [
+    "app-nodejs"
+  ],
+  "author": "Cristian B.Santos <cbsan.dev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cbsan/app-nodejs/issues"
+  },
+  "homepage": "https://github.com/cbsan/app-nodejs#readme"
+}
