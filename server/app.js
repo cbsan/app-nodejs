@@ -1,25 +1,29 @@
 var fs = require('fs');
 
-fs.writeFile('my_file.txt', 'Teste', (err) => {
-    if (err) {
-        console.error(err);
-    }
+var file = 'my_file.txt';
+// var count = 0;
 
-    console.info('File created');
-});
+// console.time('Assinc');
 
-fs.appendFile('my_file.txt','Append Content', (err) => {
-    if (err) {
-        console.error(err);
-    }
+// for (let i = 0; i < 1000; i++) {
+//   fs.readFile('my_file.txt', (err, data) => {
+//     if (err) {
+//       console.error(err);
+//     }
 
-    console.info('Append success');
-})
+//     count++;
+//     console.log('Assinc', data.toString());
 
-fs.readFile('my_file.txt', (err, data) => {
-    if (err) {
-        console.error(err);
-    }
-
-    console.info('Content ->', data.toString());
-})
+//     if (count === 1000) {
+//         console.timeEnd('Assinc');
+//     }
+    
+//   })
+// }
+//112.473 ms
+console.time('Sync');
+for (let i = 0; i < 1000; i++) {
+    var data = fs.readFileSync('my_file.txt');
+    console.log('Sync', data.toString());
+}
+console.timeEnd('Sync');
