@@ -17,6 +17,14 @@ read = (file) => {
 var file = 'my_file.txt';
 
 read(file)
-  .then((response) => {
-    console.info(response);
-  });
+    .then((response) => {
+      console.info(response);
+      return '111111';
+    })
+    .then((response) => {
+      console.info(response);
+      return '222222';
+    })
+    .then((response) => {
+      console.info(response);
+    });
