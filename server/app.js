@@ -1,26 +1,25 @@
-var EventEmitter = require('events');
+var fs = require('fs');
 
-// var emitter = new EventEmitter();
-
-// emitter.on('meu_evento', function (value) {
-//     console.info('meu envento '+value);
-// });
-
-// emitter.emit('meu_evento', 123);
-
-class Cao extends EventEmitter
-{
-    latir() {
-        console.info('Au au!');
+fs.writeFile('my_file.txt', 'Teste', (err) => {
+    if (err) {
+        console.error(err);
     }
-}
 
-var Rex = new Cao();
+    console.info('File created');
+});
 
-// Rex.on('pessoa_no_portao', Rex.latir);
-Rex.once('pessoa_no_portao', Rex.latir);
+fs.appendFile('my_file.txt','Append Content', (err) => {
+    if (err) {
+        console.error(err);
+    }
 
-Rex.emit('pessoa_no_portao');
-Rex.emit('pessoa_no_portao');
-// Rex.removeListener('pessoa_no_portao', Rex.latir);
-Rex.emit('pessoa_no_portao');
+    console.info('Append success');
+})
+
+fs.readFile('my_file.txt', (err, data) => {
+    if (err) {
+        console.error(err);
+    }
+
+    console.info('Content ->', data.toString());
+})
