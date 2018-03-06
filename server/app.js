@@ -1,14 +1,15 @@
 var http = require('http');
 var fs = require('fs');
 
-var server = http.createServer( (request, response) => {
+var server = http.createServer( (req, res) => {
 
   fs.readFile('index.html', (err, data) => {
 
-    response.writeHead(200, {'Content-type:': 'text/html'});
-    response.write(data);
-  
-    response.end();
+    //res.setHeader('Content-Type', 'text/html');
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(data);
+
+    res.end();
   })
 
 
