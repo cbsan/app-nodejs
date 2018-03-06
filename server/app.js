@@ -1,18 +1,10 @@
-var http = require('http');
-var fs = require('fs');
+var io = require('socket.io')(3000);
 
-var server = http.createServer( (req, res) => {
+io.on('connection', (socket) => {
+  console.log('User logged');
 
-  fs.readFile('index.html', (err, data) => {
-
-    //res.setHeader('Content-Type', 'text/html');
-    res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(data);
-
-    res.end();
+  socket.on('client_hello', (data) => {
+    //io.sockets.emit('server_hello', data);
+    socket.broadcast.emit('server_hello', data);
   })
-
-
-});
-
-server.listen(3000);
+})
