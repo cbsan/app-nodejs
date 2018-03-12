@@ -1,4 +1,11 @@
-function Hi(pessoa) {
-    return "Hi, " + pessoa.nome;
+var Elevador = {
+  andar: 0,
+  subir() {
+    this.andar++;
+  },
+  descer() {
+    this.andar--;
+  }
 }
-Hi({ nome: "Jack" });
+
+module.exports = Elevador;

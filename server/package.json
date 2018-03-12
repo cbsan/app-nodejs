@@ -4,6 +4,8 @@
   "description": "appnodejs ",
   "main": "app.js",
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-uglify": "^3.0.0",
     "http-server": "^0.11.1",
     "promise": "^8.0.1",
     "socket.io": "^2.0.4"
